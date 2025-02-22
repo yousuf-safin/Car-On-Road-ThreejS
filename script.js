@@ -18,14 +18,14 @@ scene.add(light);
 // Load car model
 const loader = new GLTFLoader();
 let car;
-loader.load('car_model.glb', (gltf) => {
+loader.load('carglb/source/car_glb.glb', (gltf) => {
     car = gltf.scene;
     scene.add(car);
     car.position.set(0, 0, 0);
 });
 
 // Road texture
-const roadTexture = new THREE.TextureLoader().load('road_texture.jpg');
+const roadTexture = new THREE.TextureLoader().load('road.jpg');
 const roadGeometry = new THREE.PlaneGeometry(10, 20);
 const roadMaterial = new THREE.MeshStandardMaterial({ map: roadTexture });
 const road = new THREE.Mesh(roadGeometry, roadMaterial);
